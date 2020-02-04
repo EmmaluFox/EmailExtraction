@@ -28,12 +28,12 @@ namespace Email_Extraction
             }
         }
         */
-            
-            Regex newExpression = new Regex("@softwire.com");
+          
+            Regex newExpression = new Regex(@"\w+(@\w+(\.\w+)+)\W");
             string input = File.ReadAllText(@"C:\Training\Email Extraction\Email Extraction\text.txt");
             MatchCollection results = newExpression.Matches(input);
             Console.Write(results.Count);
-            
+            File.WriteAllLines(@"C:\Training\Email Extraction\Email Extraction\Dictionary.txt", args);
                /* \w(@\w*\.\w*)\W
                 finds any char between an @, full stop followed by a space but 
                 doesn't pick up .co.uk
