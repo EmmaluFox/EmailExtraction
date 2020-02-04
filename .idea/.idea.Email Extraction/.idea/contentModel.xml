@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Training\Email Extraction\Email Extraction" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Email Extraction.csproj" t="IncludeRecursive" />
+      <e p="Email Extraction.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="Email Extraction.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Text.txt" t="Include" />
+    </e>
+    <e p="C:\Users\EmmFox\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\EmmFox\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Email Extraction.1590504642.00" t="ExcludeRecursive" />
+  </component>
+</project>
