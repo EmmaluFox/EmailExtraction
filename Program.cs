@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Mime;
+using System.Text.RegularExpressions;
 
 namespace Email_Extraction
 {
@@ -8,6 +9,7 @@ namespace Email_Extraction
     {
         static void Main(string[] args)
         {
+            /*
             Console.WriteLine(DomainSearch());
             
             static int DomainSearch()
@@ -24,6 +26,14 @@ namespace Email_Extraction
                 }
                 return counter;
             }
+        }
+        */
+            
+            Regex newExpression = new Regex("@softwire.com");
+            string input = File.ReadAllText(@"C:\Training\Email Extraction\Email Extraction\text.txt");
+            MatchCollection results = newExpression.Matches(input);
+            Console.Write(results.Count);
+
         }
     }
 }
