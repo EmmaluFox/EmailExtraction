@@ -33,6 +33,15 @@ namespace Email_Extraction
             string input = File.ReadAllText(@"C:\Training\Email Extraction\Email Extraction\text.txt");
             MatchCollection results = newExpression.Matches(input);
             Console.Write(results.Count);
+            
+               /* \w(@\w*\.\w*)\W
+                finds any char between an @, full stop followed by a space but 
+                doesn't pick up .co.uk
+               
+               \w+(@\w+(\.\w+)+)\W
+               
+               */
+
 
         }
     }
