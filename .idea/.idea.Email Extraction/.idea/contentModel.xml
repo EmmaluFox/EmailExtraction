@@ -4,6 +4,7 @@
     <e p="C:\Training\Email Extraction\Email Extraction" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="Dictionary.txt" t="Include" />
       <e p="Email Extraction.csproj" t="IncludeRecursive" />
       <e p="Email Extraction.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive">

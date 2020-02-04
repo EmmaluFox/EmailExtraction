@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Mime;
 using System.Text.RegularExpressions;
@@ -9,39 +10,24 @@ namespace Email_Extraction
     {
         static void Main(string[] args)
         {
-            /*
-            Console.WriteLine(DomainSearch());
             
-            static int DomainSearch()
-            {
-                int counter = 0;
-                string input = File.ReadAllText(@"C:\Training\Email Extraction\Email Extraction\text.txt");
-               
-                for (int i = 0; i < (input.Length-13); i++)
-                {
-                    if (input.Substring(i, 13) == "@softwire.com")
-                    {
-                        counter += 1;
-                    }
-                }
-                return counter;
-            }
-        }
-        */
-          
             Regex newExpression = new Regex(@"\w+(@\w+(\.\w+)+)\W");
             string input = File.ReadAllText(@"C:\Training\Email Extraction\Email Extraction\text.txt");
             MatchCollection results = newExpression.Matches(input);
-            Console.Write(results.Count);
-            File.WriteAllLines(@"C:\Training\Email Extraction\Email Extraction\Dictionary.txt", args);
-               /* \w(@\w*\.\w*)\W
-                finds any char between an @, full stop followed by a space but 
-                doesn't pick up .co.uk
-               
-               \w+(@\w+(\.\w+)+)\W
-               
-               */
+            int countResults = results.Count;
+            Console.Write($@"{countResults} matches found.");
 
+            int counter = 0;
+            string[] dictionaryAdd = new string[results.Count];
+            foreach (Match match in results)
+            {
+                string emailAddress = match.ToString();
+                dictionaryAdd[counter] = emailAddress;
+                Console.WriteLine(emailAddress);
+                counter += 1;
+            }
+            
+            File.WriteAllLines(@"C:\Training\Email Extraction\Email Extraction\Dictionary.txt", dictionaryAdd);
 
         }
     }
