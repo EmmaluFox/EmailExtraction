@@ -6,4 +6,11 @@
         <RootNamespace>Email_Extraction</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Text.txt" />
+      <Content Include="Text.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
